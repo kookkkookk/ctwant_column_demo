@@ -9,10 +9,34 @@
 </head>
 <body>
   <div id="wrapper">
-    <img src="./專題報導示意圖_內頁.jpg" alt="專題報導示意圖_內頁">
+    <img id="cover" src="./專題報導示意圖_內頁.jpg" alt="專題報導示意圖_內頁">
   </div>
 </body>
 </html>
+<script>
+(function(){
+  const wrapper = document.querySelector('#wrapper');
+  const cover = document.querySelector('#cover');
+  let idx = 1;
+  const imgs = [
+    './專題報導示意圖_內頁.jpg',
+    './專題報導示意圖_內頁1.jpg',
+    './專題報導示意圖_內頁2.jpg',
+    './專題報導示意圖_內頁3.jpg'
+  ];
+  wrapper.addEventListener('click', chengeImg);
+
+  function chengeImg() {
+    if (idx < imgs.length-1) {
+      idx++;
+    } else {
+      idx = 0;
+    }
+    console.log('idx: ', idx);
+    cover.setAttribute('src', imgs[idx]);
+  }
+})();
+</script>
 <style>
   #wrapper {
     width: 100%;
