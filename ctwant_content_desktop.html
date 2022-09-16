@@ -27,11 +27,7 @@
   wrapper.addEventListener('click', chengeImg);
 
   function chengeImg() {
-    if (idx < imgs.length-1) {
-      idx++;
-    } else {
-      idx = 0;
-    }
+    idx = (idx + 1) % imgs.length;
     console.log('idx: ', idx);
     cover.setAttribute('src', imgs[idx]);
   }
